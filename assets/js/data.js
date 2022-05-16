@@ -3,7 +3,8 @@
 
 async function getapi(sid) {
 	const api_url =
-	`https://afternoon-mountain-93761.herokuapp.com/search?Code=${sid}`;
+	// `https://afternoon-mountain-93761.herokuapp.com/search?Code=${sid}`;
+    `/assets/js/data.json`;
 	const response = await fetch(api_url);
 	var data = await response.json();
 	console.log(data);
@@ -11,7 +12,7 @@ async function getapi(sid) {
 		// hideloader();
 	}
     console.log(data[0])
-    const sdata = data[0];
+    const sdata = data[sid-1];
 
     // assignment
     // document.getElementById('S_No').innerHTML=sdata.S_No;
